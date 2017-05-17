@@ -6,12 +6,12 @@ const express = require('express'),
       lectiiController = require('./app/controllers/lectii.controller'),
       userController = require('./app/controllers/user.controller')
 
-var cors = require('cors'); //simi
+//var cors = require('cors'); //simi
 
 app.use(logger('dev'))
 app.set('port', process.env.PORT || 3000)
 
-app.use(cors()); //simi
+//app.use(cors()); //simi
 
 app.use(express.static(path.join(__dirname, '/eco')))
 
