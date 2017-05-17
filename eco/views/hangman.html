@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Spânzurătoarea</title>
+  </head>
+  <body>
+    <div class="wrapper">
+     <h1 style="margin-top:120px;">Spânzurătoarea</h1>
+      <h2>Joc de spânzurătoarea cu elemente de economie.</h2>
+      <p>Apasă pe câte o literă și completează cuvântul.</p>
+    </div>
+    <div class="wrapper">
+      <div id="buttons">
+      </div>
+      <p id="catagoryName"></p>
+      <div id="hold">
+      </div>
+      <p id="mylives"></p>
+      <p id="clue">Indiciu: </p>
+       <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+      <div class="container">
+        <button id="hint">Indiciu</button>
+        <button id="reset">Mai incearcă</button>
+      </div>
+    </div>
+
+  </body>
+
+
+
+  <script type="text/javascript">
+  window.onload = function () {
+
+var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+      'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+      't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+var categories;         // Array of topics
+var chosenCategory;     // Selected catagory
+var getHint ;          // Word getHint
+var word ;              // Selected word
+var guess ;             // Geuss
+var geusses = [ ];      // Stored geusses
+var lives ;             // Lives
+var counter ;           // Count correct geusses
+var space;              // Number of spaces in word '-'
+
+// Get elements
+var showLives = document.getElementById("mylives");
+var showCatagory = document.getElementById("scatagory");
+var getHint = document.getElementById("hint");
+var showClue = document.getElementById("clue");
+
+
+
+// create alphabet ul
+var buttons = function () {
+  myButtons = document.getElementById('buttons');
+  letters = document.createElement('ul');
+
+  for (var i = 0; i < alphabet.length; i++) {
+    letters.id = 'alphabet';
+    list = document.createElement('li');
+    list.id = 'letter';
+    list.innerHTML = alphabet[i];
+    check();
+    myButtons.appendChild(letters);
+    letters.appendChild(list);
+  }
+}
+
+
+// Select Catagory
+var selectCat = function () {
+  if (chosenCategory === categories[0]) {
+    catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
+  } else if (chosenCategory === categories[1]) {
+    catagoryName.innerHTML = "The Chosen Category Is Films";
+  } else if (chosenCategory === categories[2]) {
+    catagoryName.innerHTML = "The Chosen Category Is Cities";
+  }
+}
+
+// Create geusses ul
+ result = function () {
+  wordHolder = document.getElementById('hold');
+  correct = document.createElement('ul');
+
+  for (var i = 0; i < word.length; i++) {
+    correct.setAttribute('id', 'my-word');
+    guess = document.createElement('li');
+    guess.setAttribute('class', 'guess');
+    if (word[i] === "-") {
+      guess.innerHTML = "-";
+      space = 1;
+    } else {
+      guess.innerHTML = "_";
+    }
+
+    geusses.push(guess);
+    wordHolder.appendChild(correct);
+    correct.appendChild(guess);
+  }
+}
+
+// Show lives
+ comments = function () {
+  showLives.innerHTML = "Mai ai " + lives + " incercari";
+  if (lives < 1) {
+    showLives.innerHTML = "Sfarsit, mai incearca!";
+  }
+  for (var i = 0; i < geusses.length; i++) {
+    if (counter + space === geusses.length) {
+      showLives.innerHTML = "Bravo, ai reusit!";
+    }
+  }
+}
+
+    // Animate man
+var animate = function () {
+  var drawMe = lives ;
+  drawArray[drawMe]();
+}
+
+
+ // Hangman
+canvas =  function(){
+
+  myStickman = document.getElementById("stickman");
+  context = myStickman.getContext('2d');
+  context.beginPath();
+  context.strokeStyle = "#fff";
+  context.lineWidth = 2;
+};
+
+  head = function(){
+    myStickman = document.getElementById("stickman");
+    context = myStickman.getContext('2d');
+    context.beginPath();
+    context.arc(60, 25, 10, 0, Math.PI*2, true);
+    context.stroke();
+  }
+
+draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
+
+  context.moveTo($pathFromx, $pathFromy);
+  context.lineTo($pathTox, $pathToy);
+  context.stroke();
+}
+
+ frame1 = function() {
+   draw (0, 150, 150, 150);
+ };
+
+ frame2 = function() {
+   draw (10, 0, 10, 600);
+ };
+
+ frame3 = function() {
+   draw (0, 5, 70, 5);
+ };
+
+ frame4 = function() {
+   draw (60, 5, 60, 15);
+ };
+
+ torso = function() {
+   draw (60, 36, 60, 70);
+ };
+
+ rightArm = function() {
+   draw (60, 46, 100, 50);
+ };
+
+ leftArm = function() {
+   draw (60, 46, 20, 50);
+ };
+
+ rightLeg = function() {
+   draw (60, 70, 100, 100);
+ };
+
+ leftLeg = function() {
+   draw (60, 70, 20, 100);
+ };
+
+drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
+
+
+// OnClick Function
+ check = function () {
+  list.onclick = function () {
+    var geuss = (this.innerHTML);
+    this.setAttribute("class", "active");
+    this.onclick = null;
+    for (var i = 0; i < word.length; i++) {
+      if (word[i] === geuss) {
+        geusses[i].innerHTML = geuss;
+        counter += 1;
+      }
+    }
+    var j = (word.indexOf(geuss));
+    if (j === -1) {
+      lives -= 1;
+      comments();
+      animate();
+    } else {
+      comments();
+    }
+  }
+}
+
+
+// Play
+play = function () {
+  categories = [
+      ["liber", "economic", "economica", "consumator"]
+  ];
+
+  chosenCategory = categories[Math.floor(Math.random() * categories.length)];
+  word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
+  word = word.replace(/\s/g, " ");
+  console.log(word);
+  buttons();
+
+  geusses = [ ];
+  lives = 10;
+  counter = 0;
+  space = 0;
+  result();
+  comments();
+  canvas();
+}
+
+play();
+
+// Hint
+
+  hint.onclick = function() {
+
+    hints = ["Un tip de bun ce nu necesită achiziționare!", "Un tip de bun care este limitat!", "Tipul de utilitate ce reprezintă folosirea unei cantități determinate dintr-un bun.", "Cel ce achiziționează un bun economic pentru satisfacerea unei anumite nevoi."];
+
+  //var catagoryIndex = categories.indexOf(chosenCategory);
+  var hintIndex = chosenCategory.indexOf(word);
+  showClue.innerHTML = "Indiciu: " +  hints[hintIndex];
+  console.log(hints[1]);
+};
+
+ // Reset
+
+document.getElementById('reset').onclick = function() {
+  correct.parentNode.removeChild(correct);
+  letters.parentNode.removeChild(letters);
+  showClue.innerHTML = "";
+  context.clearRect(0, 0, 400, 400);
+  play();
+}
+}
+
+
+
+  </script>
+
+  <style media="screen">
+    @font-face { font-family: Bariol; src: url('../assets/styles/Bariol.ttf'); }
+    body {
+
+    background: #35aeff;
+    font-family: Bariol;
+    font-size: 1.5em;
+
+    color: #fff;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    }
+
+    .wrappper {
+    width: 100%;
+    margin: 0 auto;
+    }
+    .wrappper:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    canvas {
+    color: #fff;
+    border: #fff dashed 2px;
+    padding: 15px;
+    }
+
+    h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 5px 0;
+    }
+
+    h1 {
+    font-size: 2.6em;
+    }
+
+    h2 {
+    font-size: 1.6em;
+    }
+
+    p {
+    font-size: 1.6em;
+    }
+
+    #alphabet {
+    margin: 15px auto;
+    padding: 0;
+    max-width: 900px;
+    text-align: center;
+    }
+    #alphabet:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    #alphabet li {
+    display: inline-block;
+
+    margin: 0 10px 10px 0;
+    list-style: none;
+    width: 45px;
+    height: 40px;
+    padding-top: 10px;
+    background: #fff;
+    color: #c1d72e;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border: solid 1px #fff;
+    font-size: 1.5em;
+    color:#35aeff;
+    }
+    #alphabet li:hover {
+    background:#35aeff;
+    border: solid 1px #fff;
+    color: #fff;
+    }
+
+    #my-word {
+    margin: 0;
+    display: block;
+    padding: 0;
+    display: block;
+    }
+
+    #my-word li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 1.6em;
+    }
+
+    .active {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    -moz-transition: all 1s ease-in;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    cursor: default;
+    }
+    .active:hover {
+    -moz-transition: all 1s ease-in;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    -moz-transition: all 1s ease-in;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    }
+
+    #mylives {
+    font-size: 1.6em;
+    text-align: center;
+    display: block;
+    }
+
+    button {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -khtml-border-radius: 5px;
+    background: #35aeff;
+    color: #fff;
+    border: solid 1px #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 18px 10px;
+    width: 180px;
+    margin: 10px;
+    outline: none;
+    }
+    button:hover {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    border: solid 1px #fff;
+    color: #35aeff;
+    }
+
+    @media (max-width: 767px) {
+    #alphabet {
+      padding: 0 0 0 15px;
+    }
+    }
+    @media (max-width: 480px) {
+    #alphabet {
+      padding: 0 0 0 25px;
+    }
+    }
+
+  </style>
+</html>

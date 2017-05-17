@@ -1,0 +1,364 @@
+@font-face { font-family: Bariol; src: url('Bariol.ttf'); }
+
+html {
+  background: #35aeff;
+  font-family: Bariol;
+  font-size: 1.5em;
+
+}
+h1 {
+  color: #63c5bc;
+}
+.faded {
+  color: #777;
+  font-size: 1.5em;
+}
+#quiz-counter {
+  color: #35aeff;
+}
+.quiz-container {
+    padding: 0.25em;
+    margin: 1em auto;
+}
+
+.quiz-container a {
+    text-decoration: none;
+    color: #333;
+}
+
+#quiz-header,
+#quiz-start-screen,
+#quiz-results-screen,
+#quiz-counter {
+    text-align: center;
+}
+
+#quiz-header h1 {
+  font-size:5em;
+}
+
+
+
+.question {
+    font-size: 3em;
+    text-align: center;
+    margin-top:20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.answers {
+    list-style: none;
+    padding: 0;
+    margin-top:40px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.answers a {
+    display: block;
+    font-size:2em;
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+    background: #fff;
+    border-radius:5px;
+    text-decoration: none;
+}
+
+.answers a.correct {
+    background: #4f92ff;
+    text-decoration: none;
+}
+.answers a.incorrect {
+    background: #ff2121;
+    text-decoration: none;
+}
+
+.answers a.correct,
+.answers a.incorrect {
+    color: #fff;
+}
+
+#quiz-controls {
+    background: #f9ad09;
+    color: #111;
+    padding: 0.25em 0.5em 0.5em;
+    text-align: center;
+    border-radius:5px;
+}
+
+#quiz-response {
+  font-size:2em;
+  color:white;
+}
+#quiz-results {
+    font-size: 2em;
+}
+
+#quiz-buttons a,
+.quiz-container .quiz-button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background: #88449a;
+    color: #fff;
+}
+#quiz-buttons a {
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Quiz State Overrides */
+
+.quiz-results-state #quiz-controls {
+    background: none;
+    padding: 0;
+}
+.quiz-results-state #quiz-buttons a {
+    background: #4f92ff;
+    color: #fff;
+}
+
+#rankings {
+  display: block;
+
+
+  border-radius: 10px;
+
+  margin-top: 100px;
+
+  background-color:whitesmoke;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+
+  text-decoration: none;
+
+
+}
+
+#quiz {
+  display: block;
+
+
+  z-index:-999;
+
+  margin-top:100px;
+
+  border-radius:10px;
+
+  width:1300px;
+  height:850px;
+
+  background-color:whitesmoke;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+
+  text-decoration: none;
+
+}
+
+.wrapper {
+background-color:#35aeff;
+}
+
+
+
+
+/*----PROGRESS_BAR--------*/
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
+
+@import url(http://fonts.googleapis.com/css?family=Merienda+One);
+
+.progress-container {
+  -webkit-box-shadow:inset 0 0 0 1px #D1D2D3, inset 0 -1px 25px 0 #CFCFCF;
+  box-shadow:inset 0 0 0 1px #D1D2D3, inset 0 -1px 25px 0 #CFCFCF;
+  margin: -125px 0 0 -125px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  position: absolute;
+  background: #fff;
+  height: 250px;
+  width: 250px;
+  left: 50%;
+  top: 50%;
+}
+
+.progress-circle {
+  -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+  -webkit-box-shadow: 0 -1px 0 0 #D6D7D8;
+  box-shadow: 0 -1px 0 0 #D6D7D8;
+  margin: -82px 0 0 -82px;
+  background: #F3F3F3;
+  border-radius: 100%;
+  position: absolute;
+  overflow: hidden;
+  height: 164px;
+  width: 164px;
+  left: 50%;
+  top: 50%;
+}
+
+.p-f,
+.p-h {
+  clip: rect(0, 164px, 164px, 82px);
+  position: absolute;
+  overflow: hidden;
+  height: 164px;
+  width: 100%;
+  left: 0%;
+}
+
+.p-f{
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  left: 0;
+}
+
+.p-f:before,
+.p-h:before{
+  content: '';
+  background:  #4f92ff;
+  position: absolute;
+  height: 164px;
+  width: 50%;
+  left: 0%;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -moz-transform-origin: 100% 50%;
+  -webkit-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+
+.progress-circle #progress {
+  -webkit-box-shadow: 0 1px 0 0.5px  #D6D7D8;
+  box-shadow: 0 1px 0 0.5px #D6D7D8;
+  font-family: 'Montserrat', sans-serif;
+  margin: -70px 0 0 -70px;
+  border-radius: 100%;
+  position: absolute;
+  text-align: center;
+  line-height: 140px;
+  background: #fff;
+  font-size: 34px;
+  color: #46494D;
+  height: 140px;
+  width: 140px;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+}
+
+/* Screen Readers only (from Bootstrap) */
+
+/* Click / Touch Here */
+
+.progress-container:before {
+  content: 'CSS3 Radial Progress Bar';
+  text-transform: uppercase;
+  position: absolute;
+  color: #828282;
+  font-size: 10px;
+  bottom: 15px;
+  left: 20px;
+}
+
+.progress-container:after {
+  background-size: 59px 60px;
+  content: 'Click / Touch Here \a Clique / Toque Aqui';
+  font: 1.2em 'Merienda One', cursive;
+  position: absolute;
+  padding-top: 70px;
+  white-space: pre;
+  color: #fafafa;
+  right: -110%;
+  bottom: 10px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container > header {
+	margin: 0 auto;
+	padding: 1em;
+	text-align: center;
+}
+
+.container > header h1 {
+  font-weight: 600;
+	font-size: 3em;
+	margin: 0;
+}
+
+.wrap {
+	line-height: 1.5em;
+	margin: 0 auto;
+	padding: 2em 0 3em;
+	width: 80%;
+  height:100%;
+	max-width: 2000px;
+	overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+}
+
+th {
+    background-color: #326295;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+}
+
+td, th {
+    padding: 1em 1.5em;
+    text-align: left;
+}
+
+tbody th {
+	background-color: #2ea879;
+}
+tbody tr:nth-child(2n-1) {
+    background-color: #f5f5f5;
+    transition: all .125s ease-in-out;
+}
+tbody tr:hover {
+    background-color: rgba(50,98,149,.3);
+}
+
+td.rank {
+	text-transform: capitalize;
+}

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Comportamentul consumatorului</title>
+
+    <!--styles-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <link rel="stylesheet" href="../assets/styles/consumator.css"/>
+    <link rel="stylesheet" href="../assets/styles/esentials.css"/>
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <h1 style="font-family:Bariol;font-size:3em;">Comportamentul Consumatorului</h1>
+
+
+        <div id="slider">
+
+          <ul>
+
+            <li title="slide1">
+
+              <div class="row pop-up">
+                <div class="box">
+                  <h3 style="font-size:4em;">Atenţie!</h3>
+                  <h1 style="color:#6d6d6d;margin-top:20px;">Lecțiile din cadrul acestui site sunt interactive! <br> Nu ezita să apeși pe elementele din slide-uri!</h1>
+                  <a href="#" class="close-button btn btn-info" style="font-size:2em;">Continuă</a>
+                </div>
+              </div>
+
+              <div id="slide1" class="slide cover blur-in overlay">
+
+
+                <div class="top">
+                  <h1 class="infoText" value="1">El este Mihai și cu ajutorul lui vom înțelege mai bine <br> ce înseamnă conceptul de consum!</h1>
+                </div>
+
+                <div class="bottom">
+                  <img class="action highlight" value="0" style="display:block;height:500px;" src="../assets/img/mihai.png" alt="">
+                  <img class="action highlight" value="1" style="display:block;height:500px;" src="../assets/img/magazin.png" alt="">
+                  <img value="bani" style="display:block;height:50px;" src="../assets/img/bani.png" alt="">
+                  <img value="carte" style="display:block;height:100px;" src="../assets/img/carte.png" alt="">
+                  <div class="buton">
+                    <a href="#" id="play" class="btn btn-info" style="font-size:3em;">Cumpără</a>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li title="slide2">
+              <div id="slide2" class="slide cover " >
+                <div class="top">
+                  <h1 class="infoText" value="2">Așadar, Mihai este consumator iar procesul pe care îl efectuează se numește consum. <br> Gândește-te la ce înseamnă aceste 2 concepte apoi află definiția!</h1>
+                </div>
+
+                <div class="bottom">
+
+                  <div class="definitie highlight" value="consum">
+                    <h1 style="text-align:center;"><span style="font-size:2em;">Consumul</span> reprezintă utilizarea bunurilor materiale și a serviciilor în scopul satisfacerii anumitor nevoi.</h1>
+                    <img value="exchange" src="../assets/img/exchange.png" alt="">
+                  </div>
+
+                  <div class="definitie highlight" value="consumator">
+                    <h1 style="text-align:center;"><span style="font-size:2em;">Consumatorul</span> este cel care achiziționează, prin intermediul pieței, bunuri sau servicii destinate satisfacerii nevoilor sale.</h1>
+                    <img value="mihai" src="../assets/img/mihai.png" alt="">
+                  </div>
+
+
+                </div>
+
+              </div>
+
+            </li>
+
+            <li title="slide3">
+              <div id="slide3" class="slide">
+                <div class="top">
+                  <h1 class="infoText" value="3">În această parte a lecției vom învață care este <br>diferență dintre bunurile libere și economice.</h1>
+                </div>
+
+                <div class="bottom">
+
+                  <span style="display:block;position:absolute;width:1400px;height:5px;background-color:white;top:150px;left:50px;">
+                  <span style="display:block;position:absolute;width:5px;height:800px;background-color:white;top:-150px;left:700px;">
+                  <h1 style="font-size:6em;position:absolute;left:-650px;top:20px;">Bunuri economice</h1>
+                  <h1 style="font-size:6em;position:absolute;left:60px;width:500px;top:20px;">Bunuri libere</h1>
+
+                  <h1 style="font-size:4em;position:absolute;left:-700px;top:250px;width:650px;">bun în <span style="color:red;">cantitate limitată</span> care necesită un anumit <span style="color:red;">cost</span>.</h1>
+                  <h1 style="font-size:4em;position:absolute;left:60px;top:250px;width:650px;">bun de care <span style="color:red;">poate beneficia oricine</span> iar <span style="color:red;">cantitatea</span> sa este <span style="color:red;">nelimitată</span>, raportată la cerințele oamenilor.</h1>
+
+
+                </div>
+
+              </div>
+
+            </li>
+
+            <li title="slide4">
+              <div id="slide4" class="slide" >
+                <div class="top">
+                  <h1 class="infoText" value="4">Acum că știi ce reprezintă un bun economic și unul liber, testează-ți cunoștințele clasificând elementele de mai jos în cele 2 categorii.</h1>
+                </div>
+
+                <div class="bottom">
+
+                  <h1 id="done" style="">BRAVO! <br>Ai reușit să așezi bunurile în ordine!</h1>
+
+                  <div class="dropzone-wrapper" value="economice">
+                    <h1>Bunuri economice</h1>
+                    <div class="dropzone" title="economice"></div>
+                    <div class="dropzone" title="economice"></div>
+                    <div class="dropzone" title="economice"></div>
+                  </div>
+
+                  <div class="dropzone-wrapper" value="libere">
+                    <h1>Bunuri libere</h1>
+                    <div class="dropzone" title="libere"></div>
+                    <div class="dropzone" title="libere"></div>
+                    <div class="dropzone" title="libere"></div>
+                  </div>
+
+                  <img style="width:100px;margin-right:40px;" src="../assets/img/carte.png" title="economice" value="2" id="yes-drop" class="draggable highlight action">
+                  <img style="width:60px;margin-right:40px;" src="../assets/img/telefon.png" title="economice" value="3"id="yes-drop" class="draggable highlight action">
+                  <img style="width:100px;margin-right:40px;" src="../assets/img/idee.png" title="libere" value="4"id="yes-drop" class="draggable highlight action">
+                  <img style="width:60px;margin-right:40px;" src="../assets/img/shaorma.png" title="economice" value="5"id="yes-drop" class="draggable highlight action">
+                  <img style="width:170px;margin-right:40px;" src="../assets/img/aer.png" title="libere" value="6"id="yes-drop" class="draggable highlight action">
+                  <img style="width:100px;margin-right:40px;" src="../assets/img/soare.png" title="libere" value="7"id="yes-drop" class="draggable highlight action">
+
+                </div>
+
+              </div>
+
+            </li>
+
+            <li title="slide5">
+              <div id="slide5" class="slide" >
+                <div class="top">
+                  <h1 class="infoText" value="5">Valoarea unui bun îi este atribuită prin nivelul sau de utilitate. <br> Află ce înseamnă utilitatea apăsând pe fiecare concept.</h1>
+
+                </div>
+
+                <div class="bottom">
+                  <div class="definitie highlight" value="utilitate">
+                      <h1><span style="font-size:1.8em;">Utilitatea</span>  în sens general reprezintă <span style="color:red;">capacitatea</span> unui bun <span style="color:red;">de a satisface o</span> anumită <span style="color:red;">nevoie</span>.</h1>
+                  </div>
+
+                  <div class="definitie highlight" value="utilitate-economica">
+                      <h1 style="text-align:center;"><span style="font-size:1.8em;">Utilitatea Economică</span> este <span style="color:red;">satisfacția</span> pe care consumatorul speră că o va obține prin <span style="color:red;">folosirea unei cantități determinate</span> dintr-un bun economic.</h1>
+                  </div>
+
+                  <div class="definitie highlight" value="utilitate-economica-individuala">
+                      <h1 style="text-align:center;"><span style="font-size:1.8em;">Utilitatea Economică Individuală</span><br> este <span style="color:red;">aportul de satisfacție </span>pe care un consumator consideră că îl va avea când folosește <span style="color:red;">fiecare unitate</span> dintr-o mulțime de bunuri(în cond. determinate de loc și timp).</h1>
+                  </div>
+
+                  <div class="definitie highlight" value="utilitate-totala">
+                      <h1><span style="font-size:1.8em;">Utilitatea Totală</span> este <span style="color:red;">satisfacția </span>resimțita de un consumator prin <span style="color:red;">consumarea mai multor unități</span> dintr-un bun economic.</h1>
+                  </div>
+
+                  <div class="definitie highlight" value="utilitate-marginala">
+                      <h1><span style="font-size:1.8em;">Utilitatea Marginală</span> este <span style="color:red;">satisfacția</span> resimțita de un consumator prin <span style="color:red;">consumarea unei singure unități</span> dintr-un bun economic.</h1>
+                  </div>
+
+
+                </div>
+
+              </div>
+
+            </li>
+
+            <li title="slide6">
+              <div id="slide6" class="slide">
+                <div class="top">
+                  <h1 class="infoText" value="6">Mihai își propune să mănânce 6 gogoși.Urmărește evoluția utilității marginale cât și a celei totale pe măsură ce acesta mănâncă gogoșile.</h1>
+                </div>
+
+                <div class="bottom">
+
+                  <h1 style="position:absolute;width:600px;bottom:50px;left:100px;">Ajută-l pe Mihai să mănânce apăsând pe fiecare gogoașă!</h1>
+
+                  <img value="mihai_gogosi" style="height:500px;position:absolute;top:30px;left:100px;" src="../assets/img/mihai1.png" alt="">
+
+                  <div style="position:absolute;display:block;top:120px;left:-30px;">
+                    <img value="gogoasa" style="position:absolute;top:60px;left:400px;width:100px;" class="highlight action" src="../assets/img/gogoasa.png" alt="">
+                    <img value="gogoasa" style="position:absolute;top:60px;left:510px;width:100px;" class="highlight action" src="../assets/img/gogoasa.png" alt="">
+                    <img value="gogoasa" style="position:absolute;top:60px;left:620px;width:100px;" class="highlight action" src="../assets/img/gogoasa.png" alt="">
+                    <img value="gogoasa" style="position:absolute;top:170px;left:510px;width:100px;" class="highlight action" src="../assets/img/gogoasa.png" alt="">
+                    <img value="gogoasa" style="position:absolute;top:170px;left:400px;width:100px;" class="highlight action" src="../assets/img/gogoasa.png" alt="">
+                    <img value="gogoasa" style="position:absolute;top:170px;left:620px;width:100px;" class="highlight action" src="../assets/img/gogoasa.png" alt="">
+                  </div>
+
+                  <div class="gogoasa-over definitie" style="height:300px;width:400px;left:330px;top:90px;transition:all 1 s;">
+                    <h1>Analizând graficul putem observă faptul că <span style="color:#4f92ff;">UTILITATEA TOTALĂ</span> a crescut cu fiecare gogoașă, pe când <span style="color:#ff2121;">UTILITATEA MARGINALĂ<span/> a scăzut.</h1>
+                  </div>
+
+                  <div class="ct-chart" value="chart-utilitate"></div>
+
+                  <div class="legenda">
+                      <div class="legenda1">
+                        <span id="albastru"></span>
+                        <h2 style="color:#5b5b5b;">Utilitatea Totală</h2>
+                      </div>
+
+                      <div class="legenda2">
+                        <span id="rosu"></span>
+                        <h2 style="margin-left:45px;color:#5b5b5b;">Utilitatea Marginală</h2>
+                      </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </li>
+
+            <li title="slide7">
+              <div id="slide7" class="slide">
+                <div class="top">
+                  <h1 class="infoText" value="7">Cu toții ne dorim să facem cele mai bune alegeri când vine vorba de a achiziționa un bun economic.</h1>
+                </div>
+
+                <div class="bottom">
+
+                  <h1 style="width:1200px;position:absolute;font-size:3em;left:60px;text-align:left;top:20px;">Un <u>consumator rațional</u> acționează bazându-se pe criterii de eficientă, alegând bunurile achiziționate în funcție de raportul <u>utilitate marginală/preț</u>.</h1>
+                  <img src="../assets/img/balance.png" style="position:absolute;width:200px;top:20px;right:30px;" alt="">
+                  <h1 style="position:absolute;font-size:3em;top:180px;left:60px;"><u>Programul</u> de consum reprezintă modul de combinare în consum a bunurilor.</h1>
+                  <h1 style="width:1400px;position:absolute;font-size:3em;top:250px;left:60px;text-align:left;"><u>Scopul principal</u> al unui consumator rațional este acela de a găsi cel mai eficient <u>program de consum</u> care îi oferă <u>satisfacție maximă</u>.</h1>
+                  <img src="../assets/img/eficienta.png" style="position:absolute;width:650px;left:450px;bottom:50px;" alt="">
+
+                </div>
+
+              </div>
+
+            </li>
+
+            <li title="slide8">
+              <div id="slide8" class="slide">
+                <div class="top">
+                  <h1 class="infoText" value="8">Haideți acum să observăm cum putem facem un program de consum eficient cu ajutorul datelor din cele 2 grafice.</h1>
+                </div>
+
+                <div class="bottom">
+                  <div class="ct-chart" value="mere"></div>
+                  <div class="ct-chart" value="pere"></div>
+
+                  <h1 style="font-size:4em;text-align:center;position:absolute;left:700px;top:50px;">Venit</br>30 lei</h1>
+                  <h1 style="font-size:2em;text-align:center;position:absolute;left:250px;bottom:280px;">Preț Măr = 10 lei/kg</h1>
+                  <h1 style="font-size:2em;text-align:center;position:absolute;right:200px;bottom:280px;">Preț Pâră = 10 lei/kg</h1>
+
+                  <h1 style="text-align:left;font-size:2.5em;position:absolute;left:50px;bottom:100px;">Utilitate marginală mere(1) / Preț mere = 1</br>Utilitate marginală mere(2) / Preț mere = 0.7</br> Utilitate marginală mere(3) / Preț mere = 0.6</h1>
+                  <h1 style="text-align:left;font-size:2.5em;position:absolute;right:50px;bottom:100px;">Utilitate marginală pere(1) / Preț pere = 0.8</br>Utilitate marginală pere(2) / Preț pere = 0.7</br>Utilitate marginală pere(3) / Preț pere = 0.6</h1>
+
+                  <a href="#" class="button-program btn btn-info" style="position:absolute;text-align:center;top:250px;left:650px;font-size:2em;">Creează programul</a>
+
+
+                </div>
+
+              </div>
+
+            </li>
+
+            <li title="slide9">
+              <div id="slide9" class="slide">
+                <div class="top">
+                  <h1 class="infoText" value="9">Este acum rândul tău să creezi un program de consum avantajos! <br> Apăsa pe oricare dintre cele două bunuri pentru a le adaugă în program.</h1>
+                </div>
+
+                <div class="bottom">
+                  <div class="ct-chart" value="mere-test"></div>
+                  <div class="ct-chart" value="pere-test"></div>
+
+
+                  <h1 style="font-size:2em;text-align:center;position:absolute;left:210px;bottom:290px;">Preț Măr = 10 lei/kg</h1>
+                  <h1 style="font-size:2em;text-align:center;position:absolute;right:150px;bottom:290px;">Pret Para = 10 lei/kg</h1>
+
+                  <img value="mar" src="../assets/img/mar.png" class="highlight action" style="width:200px;position:absolute;left:210px;bottom:40px;" alt="">
+                  <img value="para"src="../assets/img/para.png" class="highlight action" style="width:150px;position:absolute;right:180px;bottom:40px;" alt="">
+
+                  <div class="program">
+                    <h1 style="color:#707070;font-size:3em;text-align:center;"><u>Program de consum</u></h1>
+                    <h1 value="mere" style="color:#707070;font-size:3em;text-align:center;">0 x Mere</h1>
+                    <h1 value="pere" style="color:#707070;font-size:3em;text-align:center;">0 x Pere</h1>
+                    <h1 value="bani" style="color:#707070;font-size:2em;text-align:center;margin-top:40px;">Venit: 30 lei</h1>
+                  </div>
+
+                  <!--<a href="#" style="font-size:2em;text-align:center;top:500px;left:20px;" class="button-verificare action-button shadow animate blue">Verifică!</a>
+                  --><a href="#" class="button-verificare btn btn-info" style="position:absolute;text-align:center;top:600px;left:710px;font-size:2em;">Verifică!</a>
+                  <h1 class="felicitari" style="text-align:center;position:absolute;bottom:200px;left:590px;">Bravo! <br>Ai făcut alegerea corectă!</h1>
+                  <h1 class="gresit" style="text-align:center;position:absolute;bottom:200px;left:680px;">Ups! <br>Mai încearcă!</h1>
+
+                </div>
+
+              </div>
+
+            </li>
+
+            <li title="slide10">
+              <div id="slide10" class="slide">
+                <div class="top">
+                  <h1 class="infoText" value="10">Dacă Mihai are vreodată probleme cu un bun economic achiziționat, acesta poate apela la ANPC.</h1>
+                </div>
+
+                <div class="bottom">
+                  <h1 class="" style="font-size:3em;text-align:center;position:absolute;top:20px;left:60px;">ANPC = Autoritatea Națională pentru Protecția Consumatorilor</h1>
+                  <img src="../assets/img/anpc.png" style="position:absolute;width:300px;top:20px;right:70px;" alt="">
+                  <img src="../assets/img/mihai.png" style="position:absolute;width:130px;top:320px;right:140px;" alt="">
+                  <h1 style="font-size:3em;margin-top:5px;position:absolute;top:100px;left:60px;">In ce situații poate apela Mihai la <u>ANPC</u>?</h1>
+                  <h1 style="text-align:left;font-size:3em;margin-top:5px;position:absolute;top:230px;left:60px;">-dacă i s-a refuzat garanția produsului în perioadă de garanție<br>-dacă i s-a refuzat returul produsului în perioadă legală de 14 zile <br>-dacă produsul primit nu corespunde cu cel din magazin <br>-dacă prețul de pe factură diferă de cel de pe site <br>-dacă produsul nu funcționează cum ar trebui</h1>
+                </div>
+
+              </div>
+
+            </li>
+
+            <li title="slide11">
+              <div id="slide11" class="slide">
+                <div class="top">
+                  <h1 class="infoText" value="11">Finalul lecției</h1>
+                </div>
+
+                <div class="bottom">
+                  <h1 class="" style="position:absolute;font-size:4em;text-align:center;left:50px;top:50px;">Felicitari! <br> Ai terminat cu succes lecția "Comportamentul Consumatorului"!</h1>
+                  <h1 class="" style="position:absolute;font-size:4em;text-align:center;left:50px;top:180px;">In cazul in care ți-a placut această lectie apasă pe butonul de like!</h1>
+                  <h1 class="" style="position:absolute;font-size:4em;text-align:center;left:170px;top:270px;color:#adadad;">Bibliografie: Manual de Economie - Editura Economica</h1>
+
+                  <div class="cnt" style="position:absolute;left: 37%;bottom:200px;">
+                    <a class="up fa fa-thumbs-up" aria-hidden="true" style="font-size:6em;text-decoration:none;"></a>
+                    <a class="down fa fa-thumbs-down" aria-hidden="true" style="font-size:6em;text-decoration:none;"></a>
+                    <div class="check"aria-hidden="true" style="font-size:3em;position:absolute;"><span class="fa fa-check"aria-hidden="true" style="font-size:1.8em;position:absolute;left:6px;top:3px;"></span><h1 style="font-size:0.6em;margin-left:70px;width:310px;">Multumim pentru feedback!</h1></div>
+                  </div>
+
+                  <div class="definitie" value="anunt-test" style="position:absolute;width:500px;height:200px;top:500px;left:34%;">
+                    <h1 style="position:absolute;">In continuare poti face rezolva un test pentru a-ți fixa cunostintele!</h1>
+                    <a href="test-consumator.html" class="button-test btn btn-info" style="text-align:center;font-size:2em;">Mergi la test!</a>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </li>
+
+          </ul>
+        </div>
+
+        <a href="#" class="control_next fa fa-arrow-right"></a>
+        <a href="#" style="left:0;" class="control_prev fa fa-arrow-left"></a>
+    </div>
+
+
+        <!--scripts-->
+        <script src="https://use.fontawesome.com/7a198b0590.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="http://code.interactjs.io/v1.2.6/interact.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+        <script type="text/javascript" src="../assets/scripts/textMultiplu.js"></script>
+        <script src="../assets/scripts/consumator.js"></script>
+
+
+
+
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
